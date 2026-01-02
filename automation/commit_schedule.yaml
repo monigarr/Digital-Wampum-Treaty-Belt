@@ -1,0 +1,21 @@
+year: 2026
+timezone: local
+max_commits_per_day: 4
+
+rules:
+  - name: kaswentha_integrity
+    description: Parallel rows must always match
+    rows: [Tue, Wed]
+
+  - name: silence_is_valid
+    allow_zero_commit_days: true
+
+execution:
+  jitter_minutes: [15, 120]
+  allowed_hours: [9, 18]
+  skip_if_clean_working_tree: false
+
+content:
+  base_path: belt/2025
+  weekly_log: true
+  append_only: true
